@@ -1,6 +1,6 @@
 import React from 'react';
 import HabitCheck from './HabitCheck';
-
+import Habit from './Habit';
 
 class Habits extends React.Component {
 	constructor(props) {
@@ -53,10 +53,12 @@ class Habits extends React.Component {
 				</form>
 				<hr/>
 				<ul>
-					{this.state.habits.map((habit, key)=><li 
-															key={key} 
+					{this.state.habits.map((habit, key)=><Habit 
+															id={key}
 															value={habit}
-															onClick={this.showCheck}>{habit}</li>)}
+															showCheck={this.showCheck}
+															habit={habit}
+															/>)}
 				</ul>
 				<HabitCheck habit={this.state.habit}/>
 			</div>
